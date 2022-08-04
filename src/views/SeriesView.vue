@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <AllSerie v-for="item in data" :key="item.id" :title="item.name" :overview="item.overview" :poster="item.poster_path"></AllSerie>
+    <AllSerie v-for="item in data" :key="item.id" :id="item.id" :title="item.name" :overview="item.overview" :poster="item.poster_path"></AllSerie>
   </div>
 </template>
 
