@@ -1,7 +1,6 @@
 <template>
   <div class="Genre">
-    <router-link :to ="{name: 'Genre', params: {id:id}}"></router-link>
-    <h1>{{ name }}</h1>
+    <router-link :to ="{name: 'PageGenre', params: {id:id}}"><h1>{{ name }}</h1></router-link>
   </div>
 </template>
 

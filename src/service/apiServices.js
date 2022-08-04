@@ -22,4 +22,8 @@ export default class ApiService {
   getGenre () {
     return fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=9c74e6793b2023e0e3a817a26f8db849&language=en-FR')
   }
+
+  getPageGenre (id, page) {
+    return fetch(`https://api.themoviedb.org/3/discover/movie?api_key=9c74e6793b2023e0e3a817a26f8db849&page=${page}$with_id=${id}`)
+  }
 }
