@@ -1,11 +1,12 @@
 <template>
   <div class="home">
-    <ByGenre v-for="item in data" :key="item.id" :id="item.id" :title="item.title" :overview="item.overview" :poster="item.poster_path"></ByGenre>
+  <AllMovies v-for="item in data" :key="item.id" :id="item.id" :title="item.title" :overview="item.overview" :poster="item.poster_path"></AllMovies>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
+import AllMovies from '@/components/Movies.vue'
 import ApiService from '@/service/apiServices.js'
 
 const apiService = new ApiService()
@@ -13,6 +14,7 @@ const apiService = new ApiService()
 export default {
   name: 'PageGenreView',
   components: {
+    AllMovies
   },
   data () {
     return {
@@ -22,10 +24,10 @@ export default {
     }
   },
   mounted () {
-    this.ByGenre(this.page)
+    this.AllMovies(this.page)
   },
   methods: {
-    async ByGenre (id, page) {
+    async AllMovies (id, page) {
       const res = await apiService.getPageGenre(id, page)
       const movies = await res.json()
       this.data = movies.res
